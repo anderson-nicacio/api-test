@@ -16,25 +16,25 @@ public class ProdutoService {
 	private ProdutoRepository produtoRepository;
 	
 	public List<Produto> obterTodos() {
-		return produtoRepository.obterTodos();
+		return produtoRepository.findAll();
 	}
 	
 	public Optional<Produto> obterPorId(Integer id){
-		return produtoRepository.obterPorId(id);
+		return produtoRepository.findById(id);
 	}
 	
 	public Produto cadastrar(Produto produto) {	
-		return produtoRepository.cadastrar(produto);
+		return produtoRepository.save(produto);
 	}
 	
 	public void deletar(Integer id) {
-		produtoRepository.deletar(id);
+		produtoRepository.deleteById(id);
 	}
 	
 	public Produto atualizar(Integer id ,Produto produto) {
 		
 		produto.setId(id);
 		
-		return produtoRepository.atualizar(produto);
+		return produtoRepository.save(produto);
 	}
 }

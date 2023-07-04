@@ -17,7 +17,7 @@ import com.example.teste.model.Produto;
 import com.example.teste.services.ProdutoService;
 
 @RestController
-@RequestMapping("/api/produtos")
+@RequestMapping("/api/produto")
 public class ProdutoController {
 	
 	@Autowired
